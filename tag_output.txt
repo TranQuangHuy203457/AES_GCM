@@ -1,0 +1,6 @@
+TAG (hex): ef3889357cc8a3d26b44a9b294b0563b
+TAG (Base64): 7ziJNXzIo9JrRKmylLBWOw==
+IV (hex): 227ffc1585fd2856193869a4
+Salt (hex): e3ee6a791e1b1b5ebd0561f5c116bb
+PBKDF2: HMAC-SHA256, 100000 vong
+Cipher bytes: 5474427

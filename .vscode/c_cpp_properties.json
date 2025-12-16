@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+                "C:/Users/Huy/Downloads/winlibs-13.0.0/mingw64/include",
+                "C:/Users/Huy/Downloads/winlibs-13.0.0/mingw64/x86_64-w64-mingw32/include"
+                "C:/Users/Huy/Downloads/winlibs-13.0.0/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include"
+
+            ],
+            "defines": [
+            ],
+            "compilerPath": "C:/Users/Huy/Downloads/winlibs-13.0.0/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
