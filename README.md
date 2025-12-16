@@ -42,10 +42,3 @@
 - TAG dài 128 bit, không rút ngắn.
 - Status không hiển thị preview ciphertext để tránh rò rỉ thêm.
 
-## Clean
-- Generated files: `cipher_output.bin`, `tag_output.bin`, `gcm.exe` có thể xóa an toàn.
-
-## TODO (gợi ý)
-- Thêm chế độ giải mã dùng file Salt||IV||cipher + TAG.
-- Cho phép chọn số vòng PBKDF2 và salt length tùy biến.
-- Cho phép người dùng chỉ định IV thay vì random (cho test vector).
