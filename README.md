@@ -1,17 +1,17 @@
 ## Build
-- Toolchain: MinGW-w64 (gcc/g++). Example:
-  - `g++ -std=c++17 main.cpp AES_256.cpp GCM.cpp GMAC.cpp -o gcm.exe -mwindows -lgdi32 -lole32 -lshell32 -luuid -lcomdlg32 -lgdiplus -lbcrypt`
-- Sources: `main.cpp`, `AES_256.cpp/.h`, `GCM.cpp/.h`, `GMAC.cpp/.h`
+- Toolchain: MinGW-w64 (gcc/g++). Example (run from repo root):
+  - `g++ -std=c++17 src/main.cpp src/AES_256.cpp src/GCM.cpp src/GMAC.cpp -o out/gcm.exe -mwindows -lgdi32 -lole32 -lshell32 -luuid -lcomdlg32 -lgdiplus -lbcrypt`
+- Sources: trong `src/` (`main.cpp`, `AES_256.cpp/.h`, `GCM.cpp/.h`, `GMAC.cpp/.h`).
 - No external dependencies beyond Win32/GDI+/bcrypt (Windows API).
 
 ## Run
-- Launch `gcm.exe` (GUI).
+- Launch `out/gcm.exe` (GUI) từ repo root hoặc chạy bên trong thư mục `out/`.
 - Steps:
-  1) Nhap KEY (DEC hoac HEX).
+  1) Nhap KEY (DEC hoac HEX hoặc `pass:...`).
   2) Chon file Input.
   3) Chon file chu ky (AAD).
   4) Bam "Ma hoa + Tao TAG".
-- Ket qua:
+- Ket qua (ghi trong thư mục hiện tại của `gcm.exe`, mac dinh `out/`):
   - `cipher_output.bin`: prefix IV||cipher, va neu dung passphrase thi prefix Salt||IV||cipher.
   - `tag_output.bin`: 16 byte TAG.
   - `tag_output.txt`: TAG hex + Base64, IV (và Salt nếu có), thong tin PBKDF.
@@ -25,11 +25,11 @@
   - `0x10` hoặc `10a` → hiểu là HEX.
   - `pass:hello world` → dùng PBKDF2 với Salt ngẫu nhiên.
 
-## Files
-- `main.cpp`: Win32 GUI, I/O, status display.
-- `AES_256.*`: AES-256 block cipher.
-- `GCM.*`: Galois/Counter Mode (encrypt/decrypt, TAG).
-- `GMAC.*`: GMAC helper.
+## Files / structure
+- `src/`: `main.cpp` (Win32 GUI), `AES_256.*`, `GCM.*`, `GMAC.*`.
+- `docs/`: `GCM_Report.md` (mô tả kỹ thuật).
+- `out/`: binary build và file sinh ra (`gcm.exe`, cipher/tag outputs).
+- `README.md`: hướng dẫn nhanh.
 
 ## Output format
 - `cipher_output.bin`: nếu dùng khóa thô → `IV(12)||ciphertext`; nếu dùng passphrase → `Salt(16)||IV(12)||ciphertext`.
