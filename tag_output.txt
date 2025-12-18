@@ -1,0 +1,4 @@
+TAG (hex): 0089749b1335162e8964f5e65ca431
+TAG (Base64): AIl0mxM1Fi6JBk9eZQykMQ==
+IV (hex): 6ad229a832e497fdcf9d845a
+Cipher bytes: 5474427
